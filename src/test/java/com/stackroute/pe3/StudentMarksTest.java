@@ -30,15 +30,17 @@ I   n the setup method ,object of class is declared
         studentMarks = null;
     }
 
-    /* this function will input 4 grades of students and should return same output as input
+    /* this function will take input of number of students and 4 grades of students and should return
+    same output as input
      */
     @Test
     public void givenInputShouldReturnSameOutput() {
         int[] grades={12,30,60,80};
-        int[] actualresult = grades.getGrades(4,grades);
+        String actualresult = grades.getGrades(4,grades);
         assertEquals(grades, actualresult);
     }
-    /* this function will input 4 grades of students and should return same output as input
+    /* this function will input of negative number of studnts and 4 grades of students and should return
+    error message
      */
     @Test
     public void givenNegativeInputShouldReturnErrorMessage() {
@@ -46,7 +48,7 @@ I   n the setup method ,object of class is declared
         String actualresult = grades.getGrades(-4,grades);
         assertEquals(grades, actualresult);
     }
-    /* this function will input 4 grades of students and should return same output as input
+    /* this function will input 4 grades of students and should return successful message that value is in range
      */
     @Test
     public void givenInputShouldReturnPassedMessage() {
@@ -54,7 +56,7 @@ I   n the setup method ,object of class is declared
         String actualresult = grades.getGrades(7,grades);
         assertEquals(grades, actualresult);
     }
-    /* this function will input 4 grades of students and should return same output as input
+    /* this function will input 4 grades of students and should return error message that value should be in range
      */
     @Test
     public void givenInputShouldReturnErrorMessage() {
