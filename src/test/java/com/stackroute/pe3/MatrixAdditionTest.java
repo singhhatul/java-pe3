@@ -41,23 +41,23 @@ I   n the setup method ,object of class is declared
         int[][] matrix2 = { { 9, 8 }, { 7, 6 },{ 5, 4} };
         int[][] actualresult =matrixAddition.additionOfMatrix(matrix1,matrix2,noOfColOfMatrix1
                                           ,noOfRowOfMatrix1,noOfColOfMatrix2,noOfRowOfMatrix2);
-        //assertEquals("successfully added given two matrix",actualresult);
-        assertArrayEquals(matrix1,matrix2);
+        int[][] expectedResult={{10,10},{10,10},{10,10}};
+        assertArrayEquals(expectedResult,actualresult);
 
     }
 
     @Test
-    public void givenTwoMatrixShouldReturnAdditionOfMatrix() {
+    public void givenTwoMatrixShouldReturnErrorMessage() {
         int noOfRowOfMatrix1=3;
         int noOfColOfMatrix1=2;
         int noOfRowOfMatrix2=2;
         int noOfColOfMatrix2=2;
-
+        int[][] expectedResult=null;
         int[][] matrix1 = { { 1, 2 }, { 3, 4 },{ 5, 6} };
         int[][] matrix2 = { { 9, 8 }, { 7, 6 } };
-        String actualresult =matrixAddition.additionOfMatrix(matrix1,matrix2,noOfColOfMatrix1
-                                          ,noOfRowOfMatrix1,noOfColOfMatrix2,noOfRowOfMatrix2);
-        assertEquals("number of rows and column should be equal of both matrix",actualresult);
+        int[][] actualresult =matrixAddition.additionOfMatrix(matrix1,matrix2,noOfColOfMatrix1
+                ,noOfRowOfMatrix1,noOfColOfMatrix2,noOfRowOfMatrix2);
+        assertArrayEquals(expectedResult,actualresult);
 
     }
 }

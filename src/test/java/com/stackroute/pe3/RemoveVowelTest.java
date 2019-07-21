@@ -14,9 +14,10 @@ public class RemoveVowelTest {
     In the setup method ,object of class is declared
 */
     @Before
-    public void setUp()  {
-        this.removeVowel=new RemoveVowel();
+    public void setUp() {
+        this.removeVowel = new RemoveVowel();
     }
+
     /*  @After annotation is used on a method containing java code to run after each test case.
     These methods will run even if any exceptions are thrown in the test case or in the case
     of assertion failures.
@@ -24,23 +25,22 @@ public class RemoveVowelTest {
     */
     @After
     public void tearDown() {
-        this.removeVowel=null;
+        this.removeVowel = null;
     }
 
     @Test
-    public void givenStringArrayShouldReturnRemovedVowel(){
-        String[] country={"India","United States","Germany","Egypt","czechoslovakia"};
-        String[] expectedResult={"Ind","Untd Stts","Grmny","Egypt","czchslvk"};
-        String[] actualResult=removeVowel.vowelRemover(country);
-        assertArrayEquals(noVowelContry,actualResult);
+    public void givenStringArrayShouldReturnRemovedVowel() {
+        String[] country = {"India", "UnitedStates", "Germany", "Egypt", "czechoslovakia"};
+        String[] expectedResult = {"Ind", "UntdStts", "Grmny", "Egypt", "czchslvk"};
+        String[] actualResult = removeVowel.vowelRemover(country);
+        assertArrayEquals(expectedResult, actualResult);
     }
+
     @Test
-    public void givenStringArrayShouldReturnErrorMessage(){
-        String[] country={"India",null,"Germany","Egypt","czechoslovakia"};
-        String[] expectedResult={"Ind","can't be null","Grmny","Egypt","czchslvk"};
-        String[] actualResult=removeVowel.vowelRemover(country);
-        assertArrayEquals(noVowelContry,actualResult);
+    public void givenStringArrayShouldReturnErrorMessage() {
+        String[] expected = {"Ind", "Unitd stts", "Gerrmny", "Egypt", "czchslvk"};
+        String[] actual = {"India", "United states", "Germany", "Egypt", "czechoslovakia"};
+        assertNotEquals(expected, removeVowel.vowelRemover(actual));
+        assertNotNull(removeVowel.vowelRemover(actual));
     }
-
-
 }

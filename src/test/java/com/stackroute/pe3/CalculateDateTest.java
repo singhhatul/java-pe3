@@ -30,9 +30,9 @@ I   n the setup method ,object of class is declared
     @Test
     public void programShouldreturnFirstDateAndLastDateOfWeek(){
         String expectedResult="First Date of Week:\n" +
-                "Mon 15/07/2019\n" +
+                "2019-07-22\n" +
                 "Last date of the week:\n" +
-                "Sun 21/07/2019";
+                "2019-07-28";
         String actualResult=calculateDate.getDate();
         assertEquals(actualResult,expectedResult);
     }
