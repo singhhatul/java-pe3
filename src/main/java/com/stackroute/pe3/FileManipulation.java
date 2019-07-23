@@ -8,6 +8,7 @@ import java.io.IOException;
 public class FileManipulation {
     public String getFileContent(String fileLocation) throws IOException {
         String line = null;
+
         try {
             /* FileReader reads text files in the default encoding */
             FileReader fileReader = new FileReader(fileLocation);

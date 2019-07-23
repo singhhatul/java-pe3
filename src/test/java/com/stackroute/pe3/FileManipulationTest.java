@@ -31,7 +31,7 @@ public class FileManipulationTest {
     }
 
     @Test
-    public void givenInputShouldReturnFileContent() throws IOException {
+    public void givenFileLocationInputShouldReturnFileContent() throws IOException {
         String fileLocation="/home/cgi/Desktop/test.txt";
         String expectedResult="this is stackroute";
 
@@ -39,7 +39,7 @@ public class FileManipulationTest {
         assertEquals(expectedResult,actualResult);
     }
     @Test
-    public void givenWrongInputShouldReturnException() throws IOException {
+    public void givenWrongFileLocationInputShouldReturnException() throws IOException {
         String fileLocation="/home/cgi/Desktop/test1.txt";
         String expectedResult="Error reading file named '" + fileLocation+ "'";
 
