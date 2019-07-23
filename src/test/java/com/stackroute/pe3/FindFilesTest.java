@@ -35,5 +35,19 @@ public class FindFilesTest {
         int actualResult=files.getFileCount(folderLocation);
         assertEquals(expectedResult,actualResult);
     }
+    @Test
+    public void givenNullFolderLocationShouldReturnZero(){
+        String folderLocation=null;
+        int expectedResult=0;
+        int actualResult=files.getFileCount(folderLocation);
+        assertEquals(expectedResult,actualResult);
+    }
+    @Test
+    public void givenInvalidFolderLocationShouldReturnZero(){
+        String folderLocation="/home/cgi/Desktop/angular videos/";
+        int expectedResult=0;
+        int actualResult=files.getFileCount(folderLocation);
+        assertEquals(expectedResult,actualResult);
+    }
 
 }
