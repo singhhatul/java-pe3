@@ -8,20 +8,22 @@ import java.io.IOException;
 public class FileManipulation {
     public String getFileContent(String fileLocation) throws IOException {
         String line = null;
+        if (fileLocation != null) {
+            try {
+                /* FileReader reads text files in the default encoding */
+                FileReader fileReader = new FileReader(fileLocation);
 
-        try {
-            /* FileReader reads text files in the default encoding */
-            FileReader fileReader = new FileReader(fileLocation);
+                /* always wrap the FileReader in BufferedReader */
+                BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-            /* always wrap the FileReader in BufferedReader */
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-            while ((line = bufferedReader.readLine()) != null) {
-                return line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    return line.toUpperCase();
+                }
+            } catch (IOException ex) {
+                return "Error reading file named '" + fileLocation + "'";
             }
-        } catch (IOException ex) {
-            return "Error reading file named '" + fileLocation+ "'";
-        }
-        return line;
+            return line;
+        } else
+            return null;
     }
 }

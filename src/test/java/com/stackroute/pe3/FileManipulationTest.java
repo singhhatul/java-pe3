@@ -31,20 +31,29 @@ public class FileManipulationTest {
     }
 
     @Test
-    public void givenFileLocationInputShouldReturnFileContent() throws IOException {
+    public void givenFileLocationInputShouldReturnFileContentInUpperCase() throws IOException {
         String fileLocation="/home/cgi/Desktop/test.txt";
-        String expectedResult="this is stackroute";
+        String expectedResult="THIS IS STACKROUTE";
 
         String actualResult=file.getFileContent(fileLocation);
         assertEquals(expectedResult,actualResult);
     }
     @Test
     public void givenWrongFileLocationInputShouldReturnException() throws IOException {
-        String fileLocation="/home/cgi/Desktop/test1.txt";
+        String fileLocation="/home/cgi/Desktop/test0.txt";
         String expectedResult="Error reading file named '" + fileLocation+ "'";
 
         String actualResult=file.getFileContent(fileLocation);
         assertEquals(expectedResult,actualResult);
     }
+    @Test
+    public void givenNullFileLocationInputShouldReturnNull() throws IOException {
+        String fileLocation=null;
+        String expectedResult=null;
+
+        String actualResult=file.getFileContent(fileLocation);
+        assertEquals(expectedResult,actualResult);
+    }
+
 
 }
